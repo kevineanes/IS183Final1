@@ -1,0 +1,12 @@
+<button class="btn" (click)="goToCreate()">Create a tank</button>
+<div class="tank-card-container" *ngFor="let tank of tanks; let i = index">
+  <div class="tank-card" [routerLink]="['/tank',tank.id]">
+    <img class="tank-cover" [src]="tank.image_url" alt="tank">
+    <P>ID: {{tank.id}}</P>
+    <P>Title: {{tank.title}}</P>
+    <P>Author: {{tank.author}}</P>
+    <P>Genre: {{tank.genre}}</P>
+    <P>Read: {{tank.read}}</P>
+  </div>
+  <button class="delete" (click)="deleteTank(tank.id)">X</button>
+</div>
